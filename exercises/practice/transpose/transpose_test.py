@@ -52,6 +52,12 @@ class TransposeTest(unittest.TestCase):
 
         self.assertEqual(transpose(text), expected)
 
+    def test_special_characters(self):
+        text = "The -irst line.\nThe second line."
+        expected = "TT\nhh\nee\n  \n-s\nie\nrc\nso\ntn\n d\nl \nil\nni\nen\n.e\n ."
+
+        self.assertEqual(transpose(text), expected)
+
     def test_mixed_line_length(self):
         text = "The longest line.\nA long line.\nA longer line.\nA line."
         expected = "TAAA\nh   \nelll\n ooi\nlnnn\nogge\nn e.\nglr\nei \nsnl\ntei\n .n\nl e\ni .\nn\ne\n."
@@ -81,3 +87,9 @@ class TransposeTest(unittest.TestCase):
         expected = "123456\n1 3456\n  3456\n  3 56\n    56\n    5"
 
         self.assertEqual(transpose(text), expected)
+11
+2
+3333
+444
+555555
+66666
